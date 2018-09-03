@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-toastyplugin" version="0.0.1">
-    <name>ToastyPlugin</name>
-
-    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
-    <license>MIT</license>
-
-    <keywords>cordova,android,toast,message,alert</keywords>
-    <repo>https://github.com/tmdiwakara/cordova-honeywell-scanner.git</repo>
-    <issue>https://github.com/tmdiwakara/cordova-honeywell-scanner/issues</issue>
-  
+        id="cordova.honeywell.plugin" 
+        version="0.1.0">
+    <name>HoneywellScanner</name>
+    <description>Honeywell Scanner Plugin</description>
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <engine name="cordova" version=">=3.0.0" />
     </engines>
-  
-    <js-module src="www/toastyplugin.js" name="toastyPlugin">
-        <clobbers target="window.plugins.toastyPlugin" />
+    <js-module src="www/honeywell.js" name="HoneywellScannerPlugin">
+        <clobbers target="plugins.honeywell" />
     </js-module>
+
+    <!--android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="ToastyPlugin">
-                <param name="android-package" value="com.tmdiwakara.cordova.plugin.ToastyPlugin"/>
+            <feature name="HoneywellScannerPlugin">
+                <param name="android-package" value="cordova.honeywell.plugin.HoneywellScannerPlugin"/>
             </feature>
         </config-file>
-
-        <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/tmdiwakara/cordova/plugin" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="com.honeywell.decode.permission.DECODE" />
+        </config-file>
+        <source-file src="src/android/libs/DataCollection.jar" target-dir="libs" />
+        <source-file src="src/android/HoneywellScannerPlugin.java" target-dir="src/com/icsfl/rfsmart/honeywell" />
     </platform>
 </plugin>
