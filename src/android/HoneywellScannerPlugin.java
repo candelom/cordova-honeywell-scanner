@@ -1,4 +1,4 @@
-package cordova.honeywell.plugin;
+package com.tmdiwakara.cordova.honeywell;
 
 import android.content.Context;
 
