@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova.honeywell.plugin" 
-        version="1.0.3">
+        id="com.icsfl.rfsmart.honeywell" 
+        version="0.1.0">
     <name>HoneywellScanner</name>
     <description>Honeywell Scanner Plugin</description>
     <engines>
@@ -16,13 +16,13 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="HoneywellScannerPlugin">
-                <param name="android-package" value="cordova.honeywell.plugin.HoneywellScannerPlugin"/>
+                <param name="android-package" value="com.icsfl.rfsmart.honeywell.HoneywellScannerPlugin"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="com.honeywell.decode.permission.DECODE" />
         </config-file>
         <source-file src="src/android/libs/DataCollection.jar" target-dir="libs" />
-        <source-file src="src/android/HoneywellScannerPlugin.java" target-dir="src/com/tmdiwakara/cordova/honeywell" />
+        <source-file src="src/android/HoneywellScannerPlugin.java" target-dir="src/com/icsfl/rfsmart/honeywell" />
     </platform>
 </plugin>

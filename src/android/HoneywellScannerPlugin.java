@@ -1,4 +1,4 @@
-package com.tmdiwakara.cordova.honeywell;
+package com.icsfl.rfsmart.honeywell;
 
 import android.content.Context;
 
